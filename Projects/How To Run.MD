@@ -1,4 +1,4 @@
-# For 32 bit
+# For 32 bit NASM code:
 ```bash
 nasm -f elf32 filename.asm -o filename.o
 ld -m elf_i386 filename.o -o filename
@@ -6,7 +6,7 @@ ld -m elf_i386 filename.o -o filename
 ```
 
 
-# For 64 bit
+# For 64 bit NASM code:
 ```bash
 nasm -f elf64 filename.asm -o filename.o
 ld filename.o -o filename
