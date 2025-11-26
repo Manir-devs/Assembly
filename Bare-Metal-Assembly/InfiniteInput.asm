@@ -20,7 +20,18 @@ input:
     je backspace
     ret
 clearscreen:
-    
+    mov ah,0x06
+    mov al, 0
+    mov bh, 0xF0        ;Background white, with black text.
+    mov cx, 0x0000
+    mov dx, 0x184f
+    int 0x10
+    mov ah, 0x02
+    mov bh, 0
+    mov dh, 0
+    mov dl, 0
+    int 0x10
+    ret
 printer:
     mov ah, 0x0E
     int 0x10
