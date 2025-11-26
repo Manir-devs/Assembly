@@ -56,7 +56,7 @@ backspace:
 backspacepro:
     cmp dh, 0
     je .done
-    dec dh
+    dec dh          ;dec dh means dh = dh-1
     mov dl, 79
     mov ah, 0x02
     mov bh, 0
