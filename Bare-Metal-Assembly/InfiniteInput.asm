@@ -18,6 +18,8 @@ input:
     int 0x16
     cmp al, 0x08
     je backspace
+    cmp al, 0x0D
+    je newline
     ret
 clearscreen:
     mov ah,0x06
@@ -42,6 +44,11 @@ backspace:
     mov al, ' '
     call printer
     mov al, 0x08
+    ret
+newline:
+    mov al, 0x0D
+    call printer
+    mov al, 0x0A
     ret
 
 times 510-($-$$) db 0
